@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARF Edu. - Dream Big, Study Abroad</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#0f4c6e',
+                            card: '#0a3651',
+                            cardOverlay: 'rgba(10, 54, 81, 0.75)',
+                            accent: '#FFDF00',
+                            teal: '#1b6978',
+                            cyan: '#48cae4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes slowDrift {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-15px, -10px) scale(1.02); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* LAYER 1: The back-most colored background gradient */
+        body {
+            background: linear-gradient(135deg, #1b6978 0%, #114c67 50%, #0c334d 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* NEW: Layer 1 Tint/Opacity Adjuster */
+        .bg-gradient-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.25);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* LAYER 2: The background image watermark */
+        .bg-watermark-layer {
+            position: fixed;
+            inset: 0;
+            background-image: url('logo-2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 15%;
+            animation: slowDrift 10s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* LAYER 3: The foremost content layer */
+        .content-layer {
+            position: relative;
+            z-index: 3;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 24px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #20ba5a;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+        }
+    </style>
+</head>
+<body class="text-slate-100 font-sans antialiased relative overflow-x-hidden">
+
+    <!-- LAYER 2: Background Image Watermark Layer -->
+    <div class="bg-watermark-layer"></div>
+
+    <!-- LAYER 3: First and Foremost Content Layer -->
+    <div class="content-layer">
+
+        <!-- Top Utility Bar -->
+        <div class="bg-black/30 text-slate-300 text-sm py-2 px-4 border-b border-white/10">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-6">
+                    <span><i class="fas fa-envelope text-brand-accent mr-2"></i>info@marfedu.org</span>
+                    <span><i class="fas fa-map-marker-alt text-brand-accent mr-2"></i>Cumhuriyet, 34290 Küçükçekmece/İstanbul-Türkiye</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/905370599981" target="_blank" class="hover:text-white transition"><i class="fab fa-whatsapp text-green-400 mr-1"></i> +90 537 059 9981</a>
+                    <div class="flex gap-3">
+                        <a href="#" class="hover:text-brand-accent transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-brand-accent transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-brand-accent transition"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-brand-accent transition"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header & Navigation -->
+        <header class="sticky top-0 bg-[#0c334d]/85 backdrop-blur-md shadow-lg border-b border-white/10 z-50">
+            <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="logo.jpg" alt="MARF Edu. Logo" class="h-12 w-12 object-cover rounded-full shadow border border-brand-accent/40">
+                    <div>
+                        <span class="text-2xl font-black text-white tracking-tight">MARF Edu.</span>
+                        <span class="block text-xs font-medium text-brand-accent tracking-widest uppercase">Dream Big, Study Abroad</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-200">
+                    <a href="#home" class="hover:text-brand-accent transition">Home</a>
+                    <a href="#about" class="hover:text-brand-accent transition">Mission & Vision</a>
+                    <a href="#news" class="hover:text-brand-accent transition">News & Events</a>
+                    <a href="#galleries" class="hover:text-brand-accent transition">Media Galleries</a>
+                    <a href="https://wa.me/905370599981" target="_blank" class="bg-brand-accent text-slate-950 font-semibold px-5 py-2 rounded-full hover:bg-white transition shadow-sm">Free Consultation</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="relative py-20 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <span class="bg-brand-cardOverlay text-brand-accent px-4 py-1.5 rounded-full text-sm font-semibold inline-block mb-4 border border-brand-accent/30 backdrop-blur-sm shadow-inner">
+                    <i class="fas fa-graduation-cap text-brand-accent mr-2"></i> Leading Study Abroad Consultancy for Pakistani Students
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 drop-shadow-md">
+                    Dream Big, <span class="text-brand-accent">Study Abroad</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-200 max-w-2xl mx-auto mb-10 drop-shadow">
+                    Your trusted bridge to global education in Turkey, Europe, and beyond. Expert admission guidance, scholarship assistance, and personalized mentoring.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://wa.me/905370599981" target="_blank" class="bg-brand-accent hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-2xl"></i> Chat on WhatsApp Now
+                    </a>
+                    <a href="#news" class="bg-brand-cardOverlay hover:bg-brand-card text-white font-bold px-8 py-4 rounded-xl shadow border border-white/20 backdrop-blur-sm transition">
+                        Explore Admissions & News
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section id="about" class="py-16 bg-black/20 backdrop-blur-sm border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">Who We Are & What Drives Us</h2>
+                    <p class="text-slate-300 mt-2">Empowering ambitious Pakistani youth to achieve academic excellence worldwide.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-brand-cardOverlay backdrop-blur-md text-white p-8 rounded-2xl shadow-xl border border-white/15 relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 text-white/5 text-9xl font-bold">01</div>
+                        <div class="w-14 h-14 bg-brand-accent/20 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Our Mission</h3>
+                        <p class="text-slate-200 leading-relaxed">
+                            To bridge the gap between talented Pakistani students and prestigious global universities by providing transparent, ethical, and comprehensive consultancy services. We strive to simplify complex admission pathways, secure maximum scholarship opportunities, and mentor every student to unlock their fullest potential on the international stage.
+                        </p>
+                    </div>
+                    <div class="bg-brand-cardOverlay backdrop-blur-md text-white p-8 rounded-2xl shadow-xl border border-white/15 relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 text-white/5 text-9xl font-bold">02</div>
+                        <div class="w-14 h-14 bg-brand-teal/30 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white">Our Vision</h3>
+                        <p class="text-slate-200 leading-relaxed">
+                            To become South Asia's most trusted and technologically advanced study abroad consultancy, recognized globally for transforming lives through education. We envision a future where borders never limit brilliant minds, and every deserving student gains access to world-class academic institutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Events Section -->
+        <section id="news" class="py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white">Global News & Admissions Events</h2>
+                        <p class="text-slate-300">Real-time updates on scholarships, global rankings, and university announcements.</p>
+                    </div>
+                    <span class="mt-4 md:mt-0 bg-teal-950/80 text-teal-300 border border-teal-700 text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1.5 backdrop-blur-sm">
+                        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> Live Feeds Active
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- News Card 1 -->
+                    <div class="bg-brand-cardOverlay backdrop-blur-md rounded-xl shadow-md border border-white/15 overflow-hidden hover:border-brand-accent/50 transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Global Excellence Scholarships" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-brand-accent uppercase">Scholarship Update</span>
+                            <h3 class="text-lg font-bold text-white mt-2 mb-3">Global Excellence Scholarships 2026-2027 Open for International Students</h3>
+                            <p class="text-slate-200 text-sm mb-4">Top universities across Turkey and Europe announce fully funded undergraduate and graduate scholarship programs.</p>
+                            <a href="https://news.google.com/search?q=study+abroad+scholarships+2026" target="_blank" class="text-brand-accent font-semibold text-sm hover:underline">Read on Google News &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="bg-brand-cardOverlay backdrop-blur-md rounded-xl shadow-md border border-white/15 overflow-hidden hover:border-brand-accent/50 transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="University Rankings" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-brand-cyan uppercase">Global Rankings</span>
+                            <h3 class="text-lg font-bold text-white mt-2 mb-3">Latest QS & Times Higher Education University Rankings Published</h3>
+                            <p class="text-slate-200 text-sm mb-4">Discover which partner institutions climbed the global ladder for engineering, business, and medical sciences.</p>
+                            <a href="https://news.google.com/search?q=world+university+rankings+2026" target="_blank" class="text-brand-cyan font-semibold text-sm hover:underline">Check Rankings &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="bg-brand-cardOverlay backdrop-blur-md rounded-xl shadow-md border border-white/15 overflow-hidden hover:border-brand-accent/50 transition group">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80" alt="Open House Counseling" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-brand-accent uppercase">MARF Edu. Announcement</span>
+                            <h3 class="text-lg font-bold text-white mt-2 mb-3">Free Open House & Admission Counseling Session for Pakistani Students</h3>
+                            <p class="text-slate-200 text-sm mb-4">Join our expert advisors this weekend for one-on-one document assessment and visa strategy roadmap.</p>
+                            <span class="text-slate-300 text-sm italic">Posted by MARF Edu. Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video & Photo Galleries -->
+        <section id="galleries" class="py-16 bg-black/20 backdrop-blur-sm border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">Media & Social Showcase</h2>
+                    <p class="text-slate-300 mt-2">Explore moments, student success stories, and updates from our Facebook, YouTube, Instagram & TikTok.</p>
+                </div>
+
+                <!-- Video Gallery -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-video text-brand-accent"></i> Video Gallery
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-brand-cardOverlay backdrop-blur-md border border-white/15 rounded-xl overflow-hidden shadow-md text-white flex flex-col justify-between group">
+                            <div class="h-48 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Study Abroad Guide" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-brand-accent/90 text-slate-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition"><i class="fas fa-play ml-0.5"></i></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold mb-2">Step-by-Step Study Abroad Guide for Pakistani Students</h4>
+                                <span class="text-xs text-slate-300">MARF Edu. YouTube Channel</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-cardOverlay backdrop-blur-md border border-white/15 rounded-xl overflow-hidden shadow-md text-white flex flex-col justify-between group">
+                            <div class="h-48 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="Campus Tour Istanbul" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-pink-500/90 text-white flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition"><i class="fas fa-play ml-0.5"></i></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold mb-2">Campus Life & Accommodation Tour in Istanbul</h4>
+                                <span class="text-xs text-slate-300">MARF Edu. Instagram Reels</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-brand-cardOverlay backdrop-blur-md border border-white/15 rounded-xl overflow-hidden shadow-md text-white flex flex-col justify-between group">
+                            <div class="h-48 overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&w=800&q=80" alt="Scholarship Opportunities" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-400/90 text-slate-950 flex items-center justify-center text-xl shadow-lg group-hover:scale-110 transition"><i class="fas fa-play ml-0.5"></i></div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="font-semibold mb-2">Top 5 Scholarship Opportunities You Can Apply For Today</h4>
+                                <span class="text-xs text-slate-300">MARF Edu. TikTok Feed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fas fa-images text-brand-cyan"></i> Photo Gallery
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="h-48 rounded-xl overflow-hidden shadow-md relative group border border-white/15">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Student Visa Success" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-3">
+                                <span class="text-white font-medium text-sm drop-shadow">Student Visa Success</span>
+                            </div>
+                        </div>
+                        <div class="h-48 rounded-xl overflow-hidden shadow-md relative group border border-white/15">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=600&q=80" alt="University Campus Tour" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-3">
+                                <span class="text-white font-medium text-sm drop-shadow">University Campus Tour</span>
+                            </div>
+                        </div>
+                        <div class="h-48 rounded-xl overflow-hidden shadow-md relative group border border-white/15">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Consultation Desk" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-3">
+                                <span class="text-white font-medium text-sm drop-shadow">Consultation Desk</span>
+                            </div>
+                        </div>
+                        <div class="h-48 rounded-xl overflow-hidden shadow-md relative group border border-white/15">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80" alt="Graduation Celebration" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-3">
+                                <span class="text-white font-medium text-sm drop-shadow">Graduation Celebration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-black/40 text-slate-200 py-12 border-t border-white/10 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.jpg" alt="MARF Edu." class="h-10 w-10 object-cover rounded-full border border-brand-accent/40">
+                        <span class="text-xl font-bold text-white">MARF Edu.</span>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-4">Dream Big, Study Abroad. Your reliable consultancy partner for turning global education aspirations into reality.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition">Mission & Vision</a></li>
+                        <li><a href="#news" class="hover:text-white transition">News & Events</a></li>
+                        <li><a href="#galleries" class="hover:text-white transition">Media Galleries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><i class="fas fa-map-marker-alt text-brand-accent mr-2"></i> Cumhuriyet, 34290 Küçükçekmece/İstanbul-Türkiye</li>
+                        <li><i class="fas fa-envelope text-brand-accent mr-2"></i> info@marfedu.org</li>
+                        <li><i class="fas fa-phone text-brand-accent mr-2"></i> +90 537 059 9981</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">WhatsApp Support</h4>
+                    <p class="text-sm text-slate-300 mb-4">Connect instantly with our student advisory desk on WhatsApp.</p>
+                    <a href="https://wa.me/905370599981" target="_blank" class="inline-block bg-green-600 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded-lg text-sm transition">
+                        <i class="fab fa-whatsapp mr-2"></i> +90 537 059 9981
+                    </a>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-white/10 text-center text-sm text-slate-400">
+                &copy; 2026 MARF Edu. All rights reserved. Dream Big, Study Abroad.
+            </div>
+        </footer>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/905370599981" target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp text-3xl"></i>
+            <span class="hidden sm:inline">Chat with Us</span>
+        </a>
+
+    </div>
+
+</body>
+</html>
