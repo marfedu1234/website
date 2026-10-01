@@ -56,18 +56,18 @@
         }
 
         /* LAYER 2: The background image watermark */
-        .bg-watermark-layer {
-            position: fixed;
-            inset: 0;
-            background-image: url('logo-2.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            opacity: 12%;
-            animation: slowDrift 10s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 2;
-        }
+ .bg-watermark-layer {
+    position: fixed;
+    inset: 25px; /* Creates a 25px boundary around all screen edges */
+    background-image: url('logo-2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* Keeps logo fully visible within the inset boundary */
+    opacity: 12%;
+    animation: slowDrift 10s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
 
         /* LAYER 3: The foremost content layer */
         .content-layer {
@@ -135,7 +135,7 @@
             <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
                 <a href="#" class="flex items-center gap-3">
                     <!-- Header logo increased by 25% (~60px) -->
-                    <img src="logo.jpg" alt="MARF Edu. Logo" class="h-[60px] w-[60px] object-cover rounded-full shadow border border-brand-accent/40">
+                    <img src="logo.png" alt="MARF Edu. Logo" class="h-[60px] w-[60px] object-cover rounded-full shadow border border-brand-accent/40">
                     <div>
                         <span class="text-2xl font-black text-white tracking-tight">MARF Edu.</span>
                         <span class="block text-xs font-medium text-brand-accent tracking-widest uppercase">Dream Big, Study Abroad</span>
@@ -360,7 +360,7 @@
             <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="logo.jpg" alt="MARF Edu." class="h-10 w-10 object-cover rounded-full border border-brand-accent/40">
+                        <img src="logo.png" alt="MARF Edu." class="h-10 w-10 object-cover rounded-full border border-brand-accent/40">
                         <span class="text-xl font-bold text-white">MARF Edu.</span>
                     </div>
                     <p class="text-sm text-slate-300 mb-4">Dream Big, Study Abroad. Your reliable consultancy partner for turning global education aspirations into reality.</p>
